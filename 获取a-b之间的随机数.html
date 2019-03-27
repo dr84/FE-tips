@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+    <style>
+        #box {
+            margin: 0 auto;
+            background: green;
+            width: 350px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        #newnum {
+            text-align: center;
+            font-size: 50px;
+            color: orange;
+            width: 350px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        点击<button id="btn">开始</button>获取<input id="num1" value=30>到<input id="num2" value=50>的随机数
+    </div>
+    <div id="newnum"></div>
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = () => {
+            var a = parseInt(document.getElementById("num1").value);
+            var b = parseInt(document.getElementById("num2").value);
+            var c = document.getElementById("newnum");
+            if (a > b) {
+                c.innerText = Math.floor(Math.random() * (a + 1 - b)) + b;
+            } else {
+                c.innerText = Math.floor(Math.random() * (b + 1 - a)) + a;
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>
